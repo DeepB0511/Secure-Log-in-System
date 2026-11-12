@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7fb">
+    <title>Create account · Secure Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="auth-card" aria-labelledby="page-title">
+        <a class="brand" href="{{ url_for('index') }}" aria-label="Secure Login home">
+          <span class="brand-mark" aria-hidden="true">S</span>
+          <span>Secure Login</span>
+        </a>
+        <div class="card-content">
+          <p class="eyebrow">A SAFE PLACE TO START</p>
+          <h1 id="page-title">Create your account</h1>
+          <p class="subtitle">Choose a username and a strong passphrase.</p>
+          {% if error %}
+          <p class="alert" role="alert">{{ error }}</p>
+          {% endif %}
+          <form action="{{ url_for('register') }}" method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" value="{{ username }}"
+                   autocomplete="username" minlength="3" maxlength="32"
+                   pattern="[A-Za-z0-9_.-]{3,32}" required autofocus>
+            <span class="field-help">3–32 letters, numbers, dots, underscores, or hyphens.</span>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password"
+                   autocomplete="new-password" minlength="12" maxlength="72" required>
+            <span class="field-help">At least 12 characters. Use a unique passphrase.</span>
+            <button type="submit">Create account <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="switch-link">Already have an account? <a href="{{ url_for('index') }}">Sign in</a></p>
+        </div>
+        <p class="card-footer"><span aria-hidden="true">●</span> Your password is never stored in plain text.</p>
+      </section>
+      <p class="page-note">A calmer, safer place for your account.</p>
+    </main>
+  </body>
+</html>

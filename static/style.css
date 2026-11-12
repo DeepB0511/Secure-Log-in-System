@@ -1,0 +1,251 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  color: #202537;
+  background: #f6f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(108, 113, 237, 0.1), transparent 42%),
+    #f6f7fb;
+}
+
+.page-shell {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px 28px;
+}
+
+.auth-card {
+  width: min(100%, 456px);
+  overflow: hidden;
+  border: 1px solid #e8eaf2;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 24px 70px rgba(35, 40, 76, 0.09);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 25px 32px;
+  border-bottom: 1px solid #f0f1f6;
+  color: #252a3d;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  border-radius: 10px;
+  background: #5b61d6;
+  color: white;
+  font-size: 15px;
+}
+
+.card-content {
+  padding: 37px 38px 34px;
+}
+
+.eyebrow {
+  margin: 0 0 11px;
+  color: #686ed6;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.55px;
+}
+
+h1 {
+  margin: 0;
+  color: #202537;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  font-size: clamp(25px, 5vw, 29px);
+  font-weight: 800;
+  letter-spacing: -1.1px;
+  line-height: 1.25;
+}
+
+.subtitle {
+  margin: 10px 0 27px;
+  color: #73798c;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 0 0 8px;
+  color: #30364a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  height: 47px;
+  margin: 0 0 20px;
+  padding: 0 13px;
+  border: 1px solid #e0e3ed;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #242a3d;
+  font: inherit;
+  font-size: 14px;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+input:focus {
+  border-color: #7277df;
+  box-shadow: 0 0 0 3px rgba(98, 103, 216, 0.13);
+}
+
+.field-help {
+  margin: -13px 0 18px;
+  color: #858a9a;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+button {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 5px;
+  border: 0;
+  border-radius: 8px;
+  background: #5b61d6;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  background: #4c52c3;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(98, 103, 216, 0.35);
+  outline-offset: 3px;
+}
+
+.switch-link {
+  margin: 23px 0 0;
+  color: #777d8e;
+  font-size: 12px;
+  text-align: center;
+}
+
+.switch-link a {
+  color: #555bd0;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.switch-link a:hover {
+  text-decoration: underline;
+}
+
+.alert {
+  margin: 0 0 18px;
+  padding: 11px 13px;
+  border: 1px solid #f0d4d2;
+  border-radius: 8px;
+  background: #fff7f6;
+  color: #a63d38;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.card-footer {
+  margin: 0;
+  padding: 17px 24px;
+  border-top: 1px solid #f0f1f6;
+  color: #858a9a;
+  font-size: 11px;
+  text-align: center;
+}
+
+.card-footer span {
+  margin-right: 5px;
+  color: #50aa84;
+  font-size: 8px;
+  vertical-align: 1px;
+}
+
+.page-note {
+  margin: 22px 0 0;
+  color: #989dad;
+  font-size: 11px;
+}
+
+.welcome-card .card-content {
+  padding-top: 42px;
+}
+
+.welcome-icon {
+  display: grid;
+  width: 43px;
+  height: 43px;
+  margin-bottom: 23px;
+  place-items: center;
+  border-radius: 14px;
+  background: #eaf7f0;
+  color: #3c9b70;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.secondary-button {
+  border: 1px solid #e0e3ed;
+  background: #fff;
+  color: #454b60;
+}
+
+.secondary-button:hover {
+  background: #f7f7fb;
+}
+
+@media (max-width: 480px) {
+  .page-shell {
+    padding: 24px 14px;
+  }
+
+  .brand {
+    padding: 21px 23px;
+  }
+
+  .card-content {
+    padding: 31px 24px 28px;
+  }
+}

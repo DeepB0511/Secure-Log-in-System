@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7fb">
+    <title>Your account · Secure Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="auth-card welcome-card" aria-labelledby="page-title">
+        <a class="brand" href="{{ url_for('index') }}" aria-label="Secure Login home">
+          <span class="brand-mark" aria-hidden="true">S</span>
+          <span>Secure Login</span>
+        </a>
+        <div class="card-content">
+          <div class="welcome-icon" aria-hidden="true">✓</div>
+          <p class="eyebrow">SIGNED IN SECURELY</p>
+          <h1 id="page-title">You’re all set, {{ username }}.</h1>
+          <p class="subtitle">Your account is protected and your session is active.</p>
+          <form action="{{ url_for('logout') }}" method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+            <button class="secondary-button" type="submit">Sign out</button>
+          </form>
+        </div>
+        <p class="card-footer"><span aria-hidden="true">●</span> Sign out when you’re done.</p>
+      </section>
+      <p class="page-note">A calmer, safer place for your account.</p>
+    </main>
+  </body>
+</html>

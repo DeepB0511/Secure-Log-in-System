@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7fb">
+    <title>Sign in · Secure Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="auth-card" aria-labelledby="page-title">
+        <a class="brand" href="{{ url_for('index') }}" aria-label="Secure Login home">
+          <span class="brand-mark" aria-hidden="true">S</span>
+          <span>Secure Login</span>
+        </a>
+        <div class="card-content">
+          <p class="eyebrow">YOUR ACCOUNT, PROTECTED</p>
+          <h1 id="page-title">Welcome back</h1>
+          <p class="subtitle">Sign in to continue to your secure account.</p>
+          {% if error %}
+          <p class="alert" role="alert">{{ error }}</p>
+          {% endif %}
+          <form action="{{ url_for('login') }}" method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" value="{{ username }}"
+                   autocomplete="username" minlength="3" maxlength="32"
+                   pattern="[A-Za-z0-9_.-]{3,32}" required autofocus>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password"
+                   autocomplete="current-password" maxlength="72" required>
+            <button type="submit">Sign in <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="switch-link">New here? <a href="{{ url_for('register_page') }}">Create an account</a></p>
+        </div>
+        <p class="card-footer"><span aria-hidden="true">●</span> Encrypted sessions. Private by design.</p>
+      </section>
+      <p class="page-note">A calmer, safer place for your account.</p>
+    </main>
+  </body>
+</html>
